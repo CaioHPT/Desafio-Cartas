@@ -70,7 +70,7 @@ public class JogadorController {
 		}
 	}
 	
-	@PutMapping(value = "/update/{id}")
+	@PutMapping(value = "/update")
 	public ResponseEntity<Jogador> update(@RequestBody Jogador jogador){
 		try {
 			Jogador returnJogador = jogadorService.update(jogador);
