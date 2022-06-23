@@ -75,7 +75,7 @@ public class PartidaController {
 		try {
 			Partida returnPartida = partidaService.update(partida);
 			if(!returnPartida.equals(null)) {
-				return ResponseEntity.ok().body(returnPartida);
+				return ResponseEntity.ok().build();
 			}else {
 				return ResponseEntity.noContent().build();
 			}
