@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.caio.klabDesafio.model.Jogador;
 import br.com.caio.klabDesafio.model.Partida;
-import br.com.caio.klabDesafio.service.JogadorService;
 import br.com.caio.klabDesafio.service.PartidaService;
 
 @RestController
@@ -72,7 +70,7 @@ public class PartidaController {
 		}
 	}
 	
-	@PutMapping(value = "/update/{id}")
+	@PutMapping(value = "/update")
 	public ResponseEntity<Partida> update(@RequestBody Partida partida){
 		try {
 			Partida returnPartida = partidaService.update(partida);
