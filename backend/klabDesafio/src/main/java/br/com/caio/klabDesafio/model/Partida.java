@@ -59,5 +59,5 @@ public class Partida {
 		Partida other = (Partida) obj;
 		return Objects.equals(id, other.id);
 	}
-
+	
 }

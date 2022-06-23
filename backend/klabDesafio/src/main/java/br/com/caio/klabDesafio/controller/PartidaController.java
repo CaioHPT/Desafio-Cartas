@@ -50,7 +50,7 @@ public class PartidaController {
 	public ResponseEntity<Partida> save(@RequestBody Partida partida){
 		try {
 			partidaService.save(partida);
-			return ResponseEntity.ok().body(partida);
+			return ResponseEntity.ok().build();
 		}catch (Exception ex) {
 			return ResponseEntity.badRequest().build();
 		}
