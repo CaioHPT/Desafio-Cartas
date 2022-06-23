@@ -43,7 +43,7 @@ public class JogadorService {
 	}
 	
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
-	private Jogador update(Jogador jogador) {
+	public Jogador update(Jogador jogador) {
 		try {
 			Optional<Jogador> optionalJogador = jogadorRepository.findById(jogador.getId());
 			if(optionalJogador.isPresent()) {
