@@ -24,7 +24,6 @@ public class Jogador {
 	private String nome;
 	
 	@OneToMany(mappedBy = "vencedor")
-	@Column(nullable = false)
 	private List<Partida> partidasVencidas;
 	
 	public Jogador() {
@@ -45,6 +44,14 @@ public class Jogador {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public List<Partida> getPartidasVencidas() {
+		return partidasVencidas;
+	}
+
+	public void setPartidasVencidas(List<Partida> partidasVencidas) {
+		this.partidasVencidas = partidasVencidas;
 	}
 
 	@Override

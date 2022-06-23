@@ -35,6 +35,13 @@ public class Partida {
 		this.id = id;
 	}
 
+	public Jogador getVencedor() {
+		return vencedor;
+	}
+
+	public void setVencedor(Jogador vencedor) {
+		this.vencedor = vencedor;
+	}
 
 	@Override
 	public int hashCode() {
