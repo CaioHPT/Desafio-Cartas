@@ -42,7 +42,7 @@ public class PartidaService {
 	}
 	
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
-	private Partida update(Partida partida) {
+	public Partida update(Partida partida) {
 		try {
 			Optional<Partida> optionalPartida = partidaRepository.findById(partida.getId());
 			if(optionalPartida.isPresent()) {
