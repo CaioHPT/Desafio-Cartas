@@ -33,6 +33,7 @@ function constroi(cartas) {
     let cont = 0;
     let maiorSoma = 0;
     let jogadorVencedor = '';
+    let empate = false;
     //Criando as div
     for (let i = 0; i < 4; i++) {
         let soma = 0;
@@ -69,13 +70,27 @@ function constroi(cartas) {
         if (soma > maiorSoma) {
             maiorSoma = soma;
             jogadorVencedor = `jogador ${i + 1}`;
+            empate = false;
+        }
+        else if (soma === maiorSoma) {
+            empate = true;
         }
         main === null || main === void 0 ? void 0 : main.appendChild(divCartas);
     }
-    const divJogadorVencedor = document.querySelector('.jogadorVencedor');
-    const span = document.createElement("span");
-    span.textContent = `O jogador vencedor é o ${jogadorVencedor}`;
-    setTimeout(() => {
-        divJogadorVencedor === null || divJogadorVencedor === void 0 ? void 0 : divJogadorVencedor.appendChild(span);
-    }, 1500);
+    if (empate) {
+        const divResultado = document.querySelector('.resultado');
+        const span = document.createElement("span");
+        span.textContent = `EMPATE`;
+        setTimeout(() => {
+            divResultado === null || divResultado === void 0 ? void 0 : divResultado.appendChild(span);
+        }, 1500);
+    }
+    else {
+        const divResultado = document.querySelector('.resultado');
+        const span = document.createElement("span");
+        span.textContent = `O jogador vencedor é o ${jogadorVencedor}`;
+        setTimeout(() => {
+            divResultado === null || divResultado === void 0 ? void 0 : divResultado.appendChild(span);
+        }, 1500);
+    }
 }
