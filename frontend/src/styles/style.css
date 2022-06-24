@@ -94,6 +94,7 @@ h1{
 @media(max-width: 500px){
     main{
         height: auto;
+        padding-bottom: 5rem;
     }
     main div:nth-child(3){
         margin-top: 22rem;
