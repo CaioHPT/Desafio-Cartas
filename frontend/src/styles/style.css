@@ -12,6 +12,9 @@ main{
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
     background-color:#BCAC9B;
     overflow: hidden;
 }
@@ -31,6 +34,7 @@ h1{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color:red;
 }
 
 .cards{
@@ -40,7 +44,7 @@ h1{
 }
 
 .cards img{
-    margin-top: 80px;
+    width: 120px;
 }
 
 @keyframes intro{
