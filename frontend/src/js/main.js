@@ -72,5 +72,5 @@ function constroi(cards) {
     span.textContent = `O jogador vencedor é o ${jogadorVencedor}`;
     setTimeout(() => {
         divJogadorVencedor === null || divJogadorVencedor === void 0 ? void 0 : divJogadorVencedor.appendChild(span);
-    }, 3000);
+    }, 1500);
 }

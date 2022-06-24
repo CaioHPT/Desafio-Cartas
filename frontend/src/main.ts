@@ -87,6 +87,6 @@ function constroi(cards: Card[]) {
     
     setTimeout(() => {
         divJogadorVencedor?.appendChild(span)
-    }, 2000)
+    }, 1500)
 }
 
