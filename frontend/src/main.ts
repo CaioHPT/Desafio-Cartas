@@ -88,6 +88,7 @@ function constroi(cartas: Cartas[]) {
         main?.appendChild(divCartas)
     }
 
+    
     if (empate) {
         const divResultado = document.querySelector('.resultado')
         const span = document.createElement("span")
@@ -96,6 +97,12 @@ function constroi(cartas: Cartas[]) {
 
         setTimeout(() => {
             divResultado?.appendChild(span)
+            for(let i = 0; i < 4; i++){
+                const span = document.createElement("span")
+                span.style.display = "block"
+                span.textContent = `Jogador ${i + 1}`
+                divResultado?.appendChild(span)
+            }
         }, 1500)
     } else {
         const divResultado = document.querySelector('.resultado')

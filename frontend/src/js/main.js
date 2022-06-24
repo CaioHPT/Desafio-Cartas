@@ -83,6 +83,12 @@ function constroi(cartas) {
         span.textContent = `EMPATE`;
         setTimeout(() => {
             divResultado === null || divResultado === void 0 ? void 0 : divResultado.appendChild(span);
+            for (let i = 0; i < 4; i++) {
+                const span = document.createElement("span");
+                span.style.display = "block";
+                span.textContent = `Jogador ${i + 1}`;
+                divResultado === null || divResultado === void 0 ? void 0 : divResultado.appendChild(span);
+            }
         }, 1500);
     }
     else {
