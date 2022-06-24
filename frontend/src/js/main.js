@@ -8,39 +8,44 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function getCards(deck_id, qtd) {
+//Função para pegar os cards
+function getCartas(deck_id, qtd) {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch(`http://localhost:8080/deck/cartas/${deck_id}/${qtd}`);
         const data = yield response.json();
         constroi(data.cards);
     });
 }
+//Função que cria o deck de cards
 function getDeck() {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch("http://localhost:8080/deck");
         const data = yield response.json();
-        getCards(data.deck_id, 20);
+        getCartas(data.deck_id, 20);
     });
 }
 getDeck();
-function constroi(cards) {
+//Função para construir os cards no html e mostrar o vencedor
+function constroi(cartas) {
     const texto = document.createElement("p");
     texto.textContent = "Jogador 1";
     const main = document.querySelector("main");
     let cont = 0;
     let maiorSoma = 0;
     let jogadorVencedor = '';
+    //Criando as div
     for (let i = 0; i < 4; i++) {
         let soma = 0;
-        const divCards = document.createElement("div");
-        divCards.setAttribute('class', "divCard");
+        const divCartas = document.createElement("div");
+        divCartas.setAttribute('class', "divCard");
         const cardItem = document.createElement("div");
         cardItem.setAttribute('class', 'cards');
-        divCards.appendChild(texto);
-        divCards.appendChild(cardItem);
+        divCartas.appendChild(texto);
+        divCartas.appendChild(cardItem);
+        //Inserindo as cartas nas divs e somando os valores das cartas
         for (let j = 0; j < 5; j++) {
-            console.log(cards[cont].value);
-            switch (cards[cont].value) {
+            console.log(cartas[cont].value);
+            switch (cartas[cont].value) {
                 case "ACE":
                     soma += 1;
                     break;
@@ -54,10 +59,10 @@ function constroi(cards) {
                     soma += 12;
                     break;
                 default:
-                    soma += Number(cards[cont].value);
+                    soma += Number(cartas[cont].value);
             }
             const img = document.createElement("img");
-            img.src = cards[cont].image;
+            img.src = cartas[cont].image;
             cardItem.appendChild(img);
             cont++;
         }
@@ -65,7 +70,7 @@ function constroi(cards) {
             maiorSoma = soma;
             jogadorVencedor = `jogador ${i + 1}`;
         }
-        main === null || main === void 0 ? void 0 : main.appendChild(divCards);
+        main === null || main === void 0 ? void 0 : main.appendChild(divCartas);
     }
     const divJogadorVencedor = document.querySelector('.jogadorVencedor');
     const span = document.createElement("span");
