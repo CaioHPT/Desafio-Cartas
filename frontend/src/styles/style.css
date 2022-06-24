@@ -49,7 +49,7 @@ h1{
     width: 120px;
 }
 
-.jogadorVencedor{
+.resultado{
     position: absolute;
 
     top: 20%;
@@ -57,7 +57,7 @@ h1{
     padding: 5px;
 }
 
-.jogadorVencedor span{
+.resultado span{
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     animation: introJogadorVencedor 1s ease-in-out;

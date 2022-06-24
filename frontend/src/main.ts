@@ -35,14 +35,15 @@ function constroi(cartas: Cartas[]) {
     const main = document.querySelector("main")
 
     let cont: number = 0
-    let maiorSoma : number = 0
-    let jogadorVencedor : string = '' 
+    let maiorSoma: number = 0
+    let jogadorVencedor: string = ''
+    let empate: boolean = false
 
     //Criando as div
     for (let i = 0; i < 4; i++) {
-        let soma : number = 0
+        let soma: number = 0
         const divCartas = document.createElement("div")
-        
+
         divCartas.setAttribute('class', "divCard")
 
         const cardItem = document.createElement("div")
@@ -50,11 +51,11 @@ function constroi(cartas: Cartas[]) {
         cardItem.setAttribute('class', 'cards')
         divCartas.appendChild(texto)
         divCartas.appendChild(cardItem)
-        
+
         //Inserindo as cartas nas divs e somando os valores das cartas
         for (let j = 0; j < 5; j++) {
             console.log(cartas[cont].value)
-            switch(cartas[cont].value){
+            switch (cartas[cont].value) {
                 case "ACE":
                     soma += 1
                     break
@@ -76,21 +77,35 @@ function constroi(cartas: Cartas[]) {
             cont++
         }
 
-        if(soma > maiorSoma){
+        if (soma > maiorSoma) {
             maiorSoma = soma
             jogadorVencedor = `jogador ${i + 1}`
+            empate = false
+        } else if (soma === maiorSoma) {
+            empate = true
         }
 
         main?.appendChild(divCartas)
     }
-    
-    const divJogadorVencedor = document.querySelector('.jogadorVencedor')
-    const span = document.createElement("span")
-    
-    span.textContent = `O jogador vencedor é o ${jogadorVencedor}`
-    
-    setTimeout(() => {
-        divJogadorVencedor?.appendChild(span)
-    }, 1500)
+
+    if (empate) {
+        const divResultado = document.querySelector('.resultado')
+        const span = document.createElement("span")
+
+        span.textContent = `EMPATE`
+
+        setTimeout(() => {
+            divResultado?.appendChild(span)
+        }, 1500)
+    } else {
+        const divResultado = document.querySelector('.resultado')
+        const span = document.createElement("span")
+
+        span.textContent = `O jogador vencedor é o ${jogadorVencedor}`
+
+        setTimeout(() => {
+            divResultado?.appendChild(span)
+        }, 1500)
+    }
 }
 
