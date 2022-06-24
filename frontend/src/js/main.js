@@ -27,8 +27,6 @@ function getDeck() {
 getDeck();
 //Função para construir os cards no html e mostrar o vencedor
 function constroi(cartas) {
-    const texto = document.createElement("p");
-    texto.textContent = "Jogador 1";
     const main = document.querySelector("main");
     let cont = 0;
     let maiorSoma = 0;
@@ -41,7 +39,6 @@ function constroi(cartas) {
         divCartas.setAttribute('class', "divCard");
         const cardItem = document.createElement("div");
         cardItem.setAttribute('class', 'cards');
-        divCartas.appendChild(texto);
         divCartas.appendChild(cardItem);
         //Inserindo as cartas nas divs e somando os valores das cartas
         for (let j = 0; j < 5; j++) {
