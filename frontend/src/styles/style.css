@@ -13,6 +13,7 @@ main{
     align-items: flex-end;
     justify-content: center;
     background-color:#BCAC9B;
+    overflow: hidden;
 }
 
 h1{
@@ -23,6 +24,23 @@ h1{
     text-shadow: 1px 0px 10px rgba(0, 0, 0, 0.212);
     font-size: 3rem;
     animation: intro 1.5s ease-in-out;
+}
+
+.divCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards img{
+    margin-top: 80px;
 }
 
 @keyframes intro{
