@@ -67,4 +67,10 @@ function constroi(cards) {
         }
         main === null || main === void 0 ? void 0 : main.appendChild(divCards);
     }
+    const divJogadorVencedor = document.querySelector('.jogadorVencedor');
+    const span = document.createElement("span");
+    span.textContent = `O jogador vencedor é o ${jogadorVencedor}`;
+    setTimeout(() => {
+        divJogadorVencedor === null || divJogadorVencedor === void 0 ? void 0 : divJogadorVencedor.appendChild(span);
+    }, 3000);
 }

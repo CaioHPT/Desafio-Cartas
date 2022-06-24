@@ -79,6 +79,14 @@ function constroi(cards: Card[]) {
 
         main?.appendChild(divCards)
     }
-
+    
+    const divJogadorVencedor = document.querySelector('.jogadorVencedor')
+    const span = document.createElement("span")
+    
+    span.textContent = `O jogador vencedor é o ${jogadorVencedor}`
+    
+    setTimeout(() => {
+        divJogadorVencedor?.appendChild(span)
+    }, 2000)
 }
 
